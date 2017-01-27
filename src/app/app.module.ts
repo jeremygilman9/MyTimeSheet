@@ -12,6 +12,7 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
 import { HelpComponent } from './help/help.component';
 import { TimesheetTableComponent } from './timesheet-table/timesheet-table.component';
 import { SharedModule } from './shared.module';
+import { TimesheetDetailComponent } from './timesheet-detail/timesheet-detail.component';
 
 @NgModule({
     imports: [BrowserModule,
@@ -23,7 +24,8 @@ import { SharedModule } from './shared.module';
     AppComponent,
     TimesheetComponent,
     HelpComponent,
-    TimesheetTableComponent
+    TimesheetTableComponent,
+    TimesheetDetailComponent
 ],
     bootstrap: [AppComponent]
 })

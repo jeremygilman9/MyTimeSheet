@@ -10,76 +10,52 @@
       </th>
     </thead>
     <tbody>
-      <tr *ngFor="let charge of chargeCodes | ArraySortById" class='timesheet-table-row'>
+      <tr *ngFor="let charge of chargeCodeRows | ArraySortById" class='timesheet-table-row'>
         <td [ngClass]="{'charge-code-cell': true}">
           {{ charge.id }}
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Sunday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Sunday'">
-            0.00
+          <p>
+            {{ charge.Sunday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell monday-cell': true}">
-          <p *ngIf="charge.day === 'Monday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Monday'">
-            0.00
+          <p>
+            {{ charge.Monday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Tuesday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Tuesday'">
-            0.00
+         <p>
+            {{ charge.Tuesday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Wednesday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Wednesday'">
-            0.00
+          <p>
+            {{ charge.Wednesday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Thursday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Thursday'">
-            0.00
+          <p>
+            {{ charge.Thursday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Friday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Friday'">
-            0.00
+          <p>
+            {{ charge.Friday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'day-cell': true}">
-          <p *ngIf="charge.day === 'Saturday'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Saturday'">
-            0.00
+          <p>
+            {{ charge.Saturday | number : '1.2-2' }}
           </p>
         </td>
         <td [ngClass]="{'total-cell': true}">
-          <p *ngIf="charge.day === 'Total'">
-            {{ charge.hours }}
-          </p>
-          <p *ngIf="charge.day != 'Total'">
-            0.00
+          <p>
+            {{ charge.total | number : '1.2-2' }}
           </p>
         </td>
       </tr>
-      <tr>
+      <tr class="timesheet-table-row">
         <td>
           Total: 
         </td>
@@ -91,7 +67,7 @@
         <td></td>
         <td></td>
         <td>
-          {{ total }}
+          {{ total | number : '1.2-2' }}
         </td>
       </tr>
     </tbody>

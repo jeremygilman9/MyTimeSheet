@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ArraySortByIdPipe implements PipeTransform {
 
   transform(array: Array<any>): Array<string> {
-    if (array === null) { return null; }
+    if (array == null) { return null; }
     array.sort((a: any, b: any) => {
       if (a.id < b.id){
         return -1;
