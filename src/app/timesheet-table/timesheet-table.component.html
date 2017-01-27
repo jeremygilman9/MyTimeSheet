@@ -1,0 +1,99 @@
+<div class='table-wrapper'>
+  <table [ngClass]="{'timesheet-table': true}">
+    <thead>
+      <th class='column-head'>Charge Code</th>
+      <th *ngFor="let day of days | EnumKeys" class='column-head'>
+        <p>{{day.value}}</p>
+      </th>
+      <th class="column-head">
+        Total
+      </th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let charge of chargeCodes | ArraySortById" class='timesheet-table-row'>
+        <td [ngClass]="{'charge-code-cell': true}">
+          {{ charge.id }}
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Sunday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Sunday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell monday-cell': true}">
+          <p *ngIf="charge.day === 'Monday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Monday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Tuesday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Tuesday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Wednesday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Wednesday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Thursday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Thursday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Friday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Friday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'day-cell': true}">
+          <p *ngIf="charge.day === 'Saturday'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Saturday'">
+            0.00
+          </p>
+        </td>
+        <td [ngClass]="{'total-cell': true}">
+          <p *ngIf="charge.day === 'Total'">
+            {{ charge.hours }}
+          </p>
+          <p *ngIf="charge.day != 'Total'">
+            0.00
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Total: 
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          {{ total }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
